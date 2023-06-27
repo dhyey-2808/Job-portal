@@ -1,0 +1,17 @@
+<html>
+<head>
+    <script src="https://getoncrmsolutions49-dev-ed.develop.lightning.force.com/lightning/lightning.out.js"></script>
+</head>
+<body>
+    <div id="aura-container"></div>
+    <script>
+        $Lightning.use("c:flowDeploymentApp", function () {
+            $Lightning.createComponent("c:fetchingtheFlow", {}, "aura-container",
+                function (component) {
+                    // Component initialization logic here
+                }
+            );
+        });
+    </script>
+</body>
+</html>
