@@ -1,0 +1,58 @@
+<!--
+  @Description       : HTML file for the Job Portal
+  @author            : Dhyey Dodiya (ChangeMeIn@UserSettingsUnder.SFDoc)
+  @last modified on  : 14-06-2023
+  @Comments          :  
+  Modifications Log
+  Ver   Date         Author                                              Modification
+  1.0   05-06-2023   Dhyey Dodiya (ChangeMeIn@UserSettingsUnder.SFDoc)   Initial Version
+-->
+
+<template>
+  <!-- Table for the Available Job list -->
+  <lightning-card title="Step 1 (Select Job)" icon-name="standard:picklist_choice">
+
+    <div style="height: 200px;">
+      <br>
+      <h1>Available Jobs</h1>
+      <!-- sldsValidatorIgnoreNextLine -->
+      <lightning-datatable key-field="id" data={data} show-row-number-column columns={columns} max-row-selection="1"
+        onrowselection={addinlist}>
+      </lightning-datatable>
+    </div>
+  </lightning-card>
+
+  <!-- Getting Applicant data  -->
+  <br> <br> <br>
+  <lightning-card title="Step 2 (Fill the details)" icon-name="standard:contact">
+    <br>
+    <lightning-record-form object-api-name={Objectname} columns="2" fields={fields} onsuccess={handleSuccess}
+      onsubmit={handleSubmit}>
+    </lightning-record-form>
+  </lightning-card>
+
+  <!-- File Upload  -->
+  <br> <br> <br>
+  <lightning-card title="Step 3 (Upload Resume and Submit)" icon-name="doctype:pdf">
+    <br>
+    <div>
+      <lightning:icon icon-name="standard:account" size="x-small" title=""></lightning:icon>
+      <lightning-input type="file" accept=".xlsx, .xls, .csv, .png, .doc, .docx, .pdf" label="Attachment"
+        onchange={openfileUpload}>
+      </lightning-input>
+
+    </div>
+  
+
+  <template if:true={fileData}>
+    <p>{fileData.filename}</p>
+  </template>
+
+  <!-- Submit button  -->
+  <br> <br>
+  <lightning-button variant="brand-outline" label="Submit the Data" title="Primary action with lighter look"
+    onclick={handleClick} class="slds-var-m-left_x-small">
+  </lightning-button>
+</lightning-card>
+
+</template>

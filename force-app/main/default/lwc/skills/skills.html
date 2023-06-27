@@ -1,0 +1,29 @@
+<!--
+  @Description       : Design of the page of the Skills insert and update page
+  @author            : Dhyey Dodiya (ChangeMeIn@UserSettingsUnder.SFDoc)
+  @last modified on  : 15-06-2023
+  @Comments          :  
+  Modifications Log
+  Ver   Date         Author                                              Modification
+  1.0   08-06-2023   Dhyey Dodiya (ChangeMeIn@UserSettingsUnder.SFDoc)   Initial Version
+-->
+<template>
+
+    <lightning-card title="My Skills" icon-name="standard:account">
+        <lightning-button label="Add Skills" icon-name="action:new"  onclick={add} class="slds-float_right" >
+        </lightning-button>
+        <br> 
+        <br>
+        <br>
+        <div style="height: 300px;">
+            <lightning-datatable key-field="Id" data={recordOptions} show-row-number-column hide-checkbox-column
+                columns={columns} onrowaction={rowaction}>
+            </lightning-datatable>
+        </div>
+        <br>
+
+
+    </lightning-card>
+
+
+</template>

@@ -1,0 +1,31 @@
+<!--
+  @Description       : 
+  @author            : Dhyey Dodiya (ChangeMeIn@UserSettingsUnder.SFDoc)
+  @last modified on  : 14-06-2023
+  @Comments          :  
+  Modifications Log
+  Ver   Date         Author                                              Modification
+  1.0   14-06-2023   Dhyey Dodiya (ChangeMeIn@UserSettingsUnder.SFDoc)   Initial Version
+-->
+<template>
+    <div>
+        <lightning-modal-header label="Fill Detail To Change The Record "></lightning-modal-header>
+        <lightning-modal-body>
+          
+            <template if:true={nameField}>
+                <lightning-record-edit-form object-api-name="Skill__c" record-id={recordId} onsuccess={handleSuccess}>
+                    <lightning-input-field field-name={nameField}> </lightning-input-field>
+                    <div class="slds-var-m-top_medium">
+                        <lightning-button variant="brand" type="submit" label="Save"  >
+                        </lightning-button>
+                    </div>
+                </lightning-record-edit-form>
+            </template>
+        </lightning-modal-body>
+        <lightning-modal-footer>
+            <lightning-button label="Cancel" title="Cancel" onclick={handlecancel}></lightning-button>
+        </lightning-modal-footer>
+
+    </div>
+
+</template>

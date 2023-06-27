@@ -1,0 +1,69 @@
+<!--
+  @Description       : 
+  @author            : Dhyey Dodiya (ChangeMeIn@UserSettingsUnder.SFDoc)
+  @last modified on  : 25-06-2023
+  @Comments          :  
+  Modifications Log
+  Ver   Date         Author                                              Modification
+  1.0   16-06-2023   Dhyey Dodiya (ChangeMeIn@UserSettingsUnder.SFDoc)   Initial Version
+-->
+
+<template>
+  <lightning-card>
+    <h3 slot="title">
+      <lightning-icon icon-name="standard:contact" alternative-text="Event" size="small"></lightning-icon>
+      &nbsp; Insert KT records
+    </h3>
+    <div slot="footer">
+      <lightning-button label="Add" variant="brand" onclick={addRow}>
+      </lightning-button>&nbsp;
+      <lightning-button label="Save" variant="brand" onclick={saveMultipleKTrecord}>
+      </lightning-button>
+    </div>
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+      <thead>
+        <tr class="slds-text-title_caps">
+          <th scope="col">
+            <div class="slds-truncate" title="S.No">S.NO</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Project Name">Project Name</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="KT Taker">KT Giver</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="KT Giver">KT Taker</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Action">Action</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <template for:each={KTrecordList} for:item="KTRecord" for:index="index">
+          <tr key={keyIndex}>
+            <td>{index}</td>
+            <td>
+              <lightning-input name='ProjectName' access-key={index} type='text' onchange={changeHandler}
+                value={KTRecord.Project_Name__c}>
+              </lightning-input>
+            </td>
+            <td>
+              <lightning-input name='KTgiver' access-key={index} type='Lookup' id={index} onchange={changeHandler}
+                value={contactname}></lightning-input>
+            </td>
+            <td>
+              <c-custom-lookup ongetselectedvalue={handleKTtaker} access-key={index}></c-custom-lookup>
+            </td>
+            <td>
+              <lightning-icon icon-name="action:delete" access-key={index} id={index} alternative-text="Click to Call"
+                size="small" title="large size" onclick={removeRow}>
+              </lightning-icon>
+            </td>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+  </lightning-card>
+</template>

@@ -1,0 +1,30 @@
+<!--
+  @Description       : 
+  @author            : Dhyey Dodiya (ChangeMeIn@UserSettingsUnder.SFDoc)
+  @last modified on  : 15-06-2023
+  @Comments          :  
+  Modifications Log
+  Ver   Date         Author                                              Modification
+  1.0   13-06-2023   Dhyey Dodiya (ChangeMeIn@UserSettingsUnder.SFDoc)   Initial Version
+-->
+<template>
+    <lightning-modal-header label="Add Skill from the Below List">
+    </lightning-modal-header>
+
+    <lightning-modal-body>
+        <lightning-record-form object-api-name="Skill__c" fields={fields}  onsubmit={handleSubmit} onsuccess={handleSuccess} >
+            <!-- <lightning-input-field field-name={name}></lightning-input-field> -->
+            <!-- <lightning-input-field field-name={Skill_List}></lightning-input-field> -->
+            <lightning-button variant="brand" label="labelName" title="titleName" onclick={handleSubmit}></lightning-button>
+        </lightning-record-form>
+
+    </lightning-modal-body>
+
+    <lightning-modal-footer>
+        <lightning-button label="Cancel" title="Cancel" onclick={handlecancel}>
+        </lightning-button>
+         <lightning-button label="Done" title="Cancel" onclick={handlecancel}>
+        </lightning-button>
+        
+    </lightning-modal-footer>
+</template>
