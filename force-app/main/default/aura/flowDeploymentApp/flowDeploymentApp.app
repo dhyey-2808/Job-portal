@@ -1,4 +1,4 @@
-<aura:application  extends="force:slds" >
+<aura:application  extends="ltng:outApp" >
 	<c:fetchingtheFlow>
     </c:fetchingtheFlow>
 </aura:application>
