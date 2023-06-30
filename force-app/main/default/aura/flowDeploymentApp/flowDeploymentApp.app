@@ -1,4 +1,4 @@
-<aura:application access="Global" extends="ltng:outApp"  >
+<aura:application  extends="force:slds" >
 	<c:fetchingtheFlow>
     </c:fetchingtheFlow>
-</aura:application>  
+</aura:application>
