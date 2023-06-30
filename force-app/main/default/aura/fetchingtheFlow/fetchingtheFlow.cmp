@@ -1,18 +1,22 @@
 <!--
   @Description       : 
   @author            : Dhyey Dodiya (ChangeMeIn@UserSettingsUnder.SFDoc)
-  @last modified on  : 27-06-2023
+  @last modified on  : 28-06-2023
   @Comments          :  
   Modifications Log
   Ver   Date         Author                                              Modification
   1.0   27-06-2023   Dhyey Dodiya (ChangeMeIn@UserSettingsUnder.SFDoc)   Initial Version
 -->
-<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,
+    flexipage:availableForRecordHome,
+    force:hasRecordId,
+    forceCommunity:availableForAllPageTypes,
+    force:lightningQuickAction" access="global">  
 
   <lightning:card title="Aura Component With Screen flow">
     <p class="slds-p-horizontal_small">
     <p>Hey,You will see the screen flow below</p>
-    </p> 
+    </p>
   </lightning:card>
   <aura:handler name="init" value="{!this}" action="{!c.init}" />
   <lightning:flow aura:id="flowData" />
